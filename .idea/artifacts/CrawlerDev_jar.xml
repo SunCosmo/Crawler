@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="CrawlerDev:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CrawlerDev_jar</output-path>
-    <root id="archive" name="CrawlerDev.jar">
-      <element id="module-output" name="CrawlerDev" />
-    </root>
-  </artifact>
-</component>
