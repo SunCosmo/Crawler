@@ -22,7 +22,7 @@ public final class Env {
 
     public final static String MAIN_DOMAIN = "http://zhaofuli.biz";
 
-    public final static String IMG_DOWNLOAD_PATH = "E:\\imgDownloadTest4\\";
+    public final static String IMG_DOWNLOAD_PATH = "E:\\imgDownloadTest19\\";
 
     static {
         srcUrls.push("http://zhaofuli.biz/index.html");

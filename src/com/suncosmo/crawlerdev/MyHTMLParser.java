@@ -58,7 +58,7 @@ public class MyHTMLParser implements Runnable{
                 BufferedReader bufin = new BufferedReader(
                         new InputStreamReader(is));
                 for (String tempLine; (tempLine = bufin.readLine()) != null; ) {
-                    int srcI = 0, imgI = 0;
+                    int srcI, imgI;
                     do {
                         srcI = tempLine.indexOf(srcAtt);
                         imgI = tempLine.indexOf(imgTag);
@@ -72,8 +72,8 @@ public class MyHTMLParser implements Runnable{
                     } while(srcI > 0 || imgI > 0);
                 }
                 bufin.close();
+                is.close();
             }
-            is.close();
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
@@ -87,7 +87,7 @@ public class MyHTMLParser implements Runnable{
                     && line.charAt(end) != '\'') {
                 ++end;
             }
-            String newSrcUrl = line.substring(start+5, end);
+            String newSrcUrl = line.substring(start+6, end);
             line = line.substring(end);
             if (newSrcUrl.charAt(0) == '/') {
                 newSrcUrl = MAIN_DOMAIN + newSrcUrl;

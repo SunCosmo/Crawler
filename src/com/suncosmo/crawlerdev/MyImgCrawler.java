@@ -16,11 +16,18 @@ import static com.suncosmo.crawlerdev.Env.oldImgUrls;
  * Created by SunCosmo on 2017/3/4.
  */
 public class MyImgCrawler implements Runnable {
-    public void downloadImg(String imgUrl) {
-        String method = "GET";
-        Map<String, String> header = new HashMap<>();
+    private static String method = "GET";
+
+    private static Map<String, String> header;
+
+    static {
+        header = new HashMap<>();
+
         header.put("User-Agent","Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6");
+
         header.put("Referer", "http://zhaofuli.biz/luyilu/2016/1023/1112.html");
+    }
+    public void downloadImg(String imgUrl) {
         HttpEvent.HttpConn http = new HttpEvent().new HttpConn(method, imgUrl, header, "");
         do {
             try {
