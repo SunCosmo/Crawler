@@ -84,6 +84,7 @@ public class HttpEvent {
                     (HttpURLConnection)(new URL(httpConn.url).openConnection());
             httpConn.httpURLConnection.setRequestMethod(httpConn.method);
             httpConn.httpURLConnection.setConnectTimeout(httpConn.timeOut);
+            //Set connection time out, needed here because of the http connection may be blocked overtime
             httpConn.httpURLConnection.setReadTimeout(httpConn.timeOut);
             if(httpConn.header != null) {
                 httpConn.header.forEach(httpConn.httpURLConnection::setRequestProperty);
